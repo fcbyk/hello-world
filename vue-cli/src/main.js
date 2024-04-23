@@ -12,6 +12,9 @@ import VueRouter from 'vue-router'
 // 导入路由实例对象
 import router from './router'
 
+import store from './store'; // 引入 Vuex store
+
+
 // 使用路由插件
 Vue.use(VueRouter)
 
@@ -23,7 +26,8 @@ new Vue({
   // 渲染根组件 App.vue
   // render 配置选项，用于指定 Vue 实例的根组件的渲染函数
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app') // 将根组件挂载到 id 为 app 的 DOM 元素上
 
 // h 函数通常是 createElement 函数的别名，用于创建虚拟 DOM（Virtual DOM）节点。这个函数的名字来自于 "hyperscript"，是 React 中类似的函数的命名风格。
