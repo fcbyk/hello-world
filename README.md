@@ -1,10 +1,10 @@
 ## git是什么
-<a href="https://git-scm.com/">git官网</a>
-<a href="https://git-scm.com/docs">git官方文档</a>
-<a href="https://www.bilibili.com/video/BV1vy4y1s7k6/?spm_id_from=333.999.0.0">视频学习参考</a>
-<a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/">约定式提交</a>
-<a href="https://github.com/pvdlg/conventional-changelog-metahub#commit-types">完整提交类型列表</a>
-<style> a{ margin-right: 5px; } </style>
+<a href="https://git-scm.com/" style="margin-right: 5px;">git官网</a>
+<a href="https://git-scm.com/docs" style="margin-right: 5px;">git官方文档</a>
+<a href="https://www.bilibili.com/video/BV1vy4y1s7k6/?spm_id_from=333.999.0.0" style="margin-right: 5px;">视频学习参考</a>
+<a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/" style="margin-right: 5px;">约定式提交</a>
+<a href="https://github.com/pvdlg/conventional-changelog-metahub#commit-types" style="margin-right: 5px;">完整提交类型列表</a>
+
 Git 是一个免费的、开源的分布式版本控制系统，可以快速高效地处理从小型到大型的各种 项目。 Git 易于学习，占地面积小，性能极快。 它具有廉价的本地库，方便的暂存区域和多个工作 流分支等特性。其性能优于 Subversion、CVS、Perforce 和 ClearCase 等版本控制工具。
 
 ## git的命令
