@@ -24,3 +24,10 @@ git branch --move <new-branch-name>
 git branch -M <old-branch-name> <new-branch-name> 
 # 将当前所在的分支重命名为 <new-branch-name>
 git branch -M <new-branch-name>
+
+# [-d | -D]
+# 删除本地分支
+# 如果分支有未合并的更改，Git 会拒绝删除它，并给出一个警告。
+# 如果你确定要删除，并且知道删除后的影响，可以使用 -D 选项来强制删除
+git branch -d <branch-name>
+git branch -D <branch-name>
