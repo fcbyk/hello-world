@@ -1,4 +1,4 @@
-package com.fcbyk.javaee.web;
+package com.fcbyk.javaee.web.controller;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;

@@ -8,7 +8,8 @@
     <artifactId>javaee</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!--  javaweb项目需要打包成war，而不是jar包  -->
+    <!-- 炸包，哇包  -->
+    <!-- 打包方式，默认为 jar包，web项目需要打包成 war包 -->
     <packaging>war</packaging>
 
     <properties>
@@ -17,6 +18,8 @@
     </properties>
 
     <dependencies>
+
+        <!-- servlet 依赖 -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -30,6 +33,35 @@
             -->
             <scope>provided</scope>
         </dependency>
+
+        <!-- 单元测试  -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
+
+        <!--  JDBC  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
+
+        <!--  数据库连接池Druid  -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <!--mybatis 依赖-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>
