@@ -116,4 +116,7 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!-- 配置Spring的注解包扫描 -->
+    <context:component-scan base-package="com.fcbyk.springframework.bean"/>
+
 </beans>

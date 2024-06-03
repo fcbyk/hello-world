@@ -3,6 +3,7 @@ package com.fcbyk.springframework.api;
 import com.fcbyk.springframework.bean.Book;
 import com.fcbyk.springframework.bean.DI;
 import com.fcbyk.springframework.bean.MyOrder;
+import com.fcbyk.springframework.bean.Student;
 import org.junit.Test;
 import javax.sql.DataSource;
 import org.springframework.context.ApplicationContext;
@@ -142,5 +143,13 @@ public class ApplicationContext_ {
         // 获取DruidDataSource对象
         DataSource dataSource = (DataSource) ctx.getBean("dataSource");
         System.out.println(dataSource);
+    }
+
+    @Test
+    // 使用注解
+    public void annotationDev(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student student = (Student) ctx.getBean("student");
+        student.test();
     }
 }
