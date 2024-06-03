@@ -1,10 +1,13 @@
 package com.fcbyk.springframework.api;
 
+import com.fcbyk.springframework.bean.Book;
+import com.fcbyk.springframework.bean.MyOrder;
 import com.fcbyk.springframework.dao.BookDao;
 import com.fcbyk.springframework.service.BookService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 /**
  * Spring的IoC（Inversion of Control，控制反转）容器是Spring框架的核心，主要用来管理应用程序中的组件（或称为Bean）。
@@ -59,14 +62,68 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ApplicationContext_ {
 
     @Test
-    public void ioc(){
+    // IOC容器的创建方式
+    public void getApplicationContext(){
+        // 类路径下的XML配置文件
+        ApplicationContext ctx1 = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        // 文件系统下的XML配置文件
+        ApplicationContext ctx2 = new FileSystemXmlApplicationContext("springframework/src/main/resources/applicationContext.xml");
+    }
+
+    @Test
+    // 获取bean的方式
+    public void getBean_(){
         //获取IOC容器
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        // 从容器中获取对象
-        BookService bookService = (BookService) ctx.getBean("bookService");
-        bookService.save();
-        BookDao bookDao = (BookDao) ctx.getBean("bookDao");
-        bookDao.save();
+        // 通过id从IOC容器获取bean
+        Book book1 = (Book)ctx.getBean("book");
+        book1.test();
+
+        // 通过别名从容器中获取对象
+        Book book2 = (Book)ctx.getBean("book1");
+        book2.test();
+        Book book3 = (Book)ctx.getBean("book2");
+        book3.test();
+
+        // IOC容器里面的bean默认为单例（可以改为非单例）
+        // 表现层对象，业务层对象，数据层对象，工具对象适合交给容器进行管理
+        // 封装实例的域对象不适合交给容器进行管理，会引发线程安全问题
+        System.out.println(book1);
+        System.out.println(book2);
+        System.out.println(book3);
+
+        // 获取静态工厂实例化的bean
+        MyOrder order = (MyOrder) ctx.getBean("myOrder");
+        order.test();
+
+        // Bean的三种获取方式
+        // 方式一 这种方式存在的问题是每次获取的时候都需要进行类型转换
+        Book book4 = (Book)ctx.getBean("book");
+        book4.test();
+
+        // 方式二 这种方式可以解决类型强转问题，但是参数又多加了一个
+        Book book5 = ctx.getBean("book",Book.class);
+        book5.test();
+
+        // 方式三 这种方式就类似我们依赖注入中的按类型注入。必须要确保IOC容器中该类型对应的bean对象只能有一个
+        Book book6 = ctx.getBean(Book.class);
+        book6.test();
+    }
+
+    @Test
+    // Bean的生命周期
+    public void beanLifeCycle(){
+        // ApplicationContext中没有close方法
+        // 需要将ApplicationContext更换成ClassPathXmlApplicationContext
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        Book book = (Book)ctx.getBean("book");
+        book.test();
+        MyOrder order = (MyOrder) ctx.getBean("myOrder");
+        order.test();
+
+        ctx.close();
     }
 }
