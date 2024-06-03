@@ -2,9 +2,18 @@ package com.fcbyk.springframework.bean;
 
 public class Book {
 
-    // 私有构造方法
+    private String name;
+
     private Book() {
         System.out.println("图书对象已被创建");
+    }
+
+    public Book(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     // 测试方法

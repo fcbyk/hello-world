@@ -4,9 +4,11 @@ import com.fcbyk.springframework.bean.Book;
 import com.fcbyk.springframework.bean.DI;
 import com.fcbyk.springframework.bean.MyOrder;
 import com.fcbyk.springframework.bean.Student;
+import com.fcbyk.springframework.config.SpringConfig;
 import org.junit.Test;
 import javax.sql.DataSource;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
@@ -148,8 +150,14 @@ public class ApplicationContext_ {
     @Test
     // 使用注解
     public void annotationDev(){
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        // 通过配置类生成的容器，无法使用xml里的bean，因为ComponentScan扫描不了xml里的包
+        // 注入时会可能出现不存在bean等错误
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+
         Student student = (Student) ctx.getBean("student");
-        student.test();
+        student.setterDI();
+        Book sanguo = (Book) ctx.getBean("mybook");
+        System.out.println(sanguo.getName());
     }
 }
