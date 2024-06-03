@@ -3,8 +3,6 @@ package com.fcbyk.springframework.api;
 import com.fcbyk.springframework.bean.Book;
 import com.fcbyk.springframework.bean.DI;
 import com.fcbyk.springframework.bean.MyOrder;
-import com.fcbyk.springframework.dao.BookDao;
-import com.fcbyk.springframework.service.BookService;
 import org.junit.Test;
 import javax.sql.DataSource;
 import org.springframework.context.ApplicationContext;
