@@ -1,6 +1,7 @@
 package com.fcbyk.springframework.api;
 
 import com.fcbyk.springframework.bean.Book;
+import com.fcbyk.springframework.bean.DI;
 import com.fcbyk.springframework.bean.MyOrder;
 import com.fcbyk.springframework.dao.BookDao;
 import com.fcbyk.springframework.service.BookService;
@@ -125,5 +126,13 @@ public class ApplicationContext_ {
         order.test();
 
         ctx.close();
+    }
+
+    @Test
+    // DI注入
+    public void getDI(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        DI di = ctx.getBean(DI.class);
+        di.constructorDI();
     }
 }
