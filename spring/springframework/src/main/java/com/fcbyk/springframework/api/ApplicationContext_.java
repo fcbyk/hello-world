@@ -6,6 +6,7 @@ import com.fcbyk.springframework.bean.MyOrder;
 import com.fcbyk.springframework.dao.BookDao;
 import com.fcbyk.springframework.service.BookService;
 import org.junit.Test;
+import javax.sql.DataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
@@ -134,5 +135,14 @@ public class ApplicationContext_ {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         DI di = ctx.getBean(DI.class);
         di.constructorDI();
+    }
+
+    @Test
+    // 管理第三方bean
+    public void getDataSource(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        // 获取DruidDataSource对象
+        DataSource dataSource = (DataSource) ctx.getBean("dataSource");
+        System.out.println(dataSource);
     }
 }
