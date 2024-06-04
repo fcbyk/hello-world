@@ -1,0 +1,36 @@
+<div>
+    <p>font-family属性指定一个元素的字体</p>
+</div>
+
+<style>
+
+    /* 使用@font-face 关键字下载网络字体，有2个必要属性 */
+    @font-face {
+        font-family: "myFont";
+        src: url("华康儿风体 Std W4.otf") format("opentype");
+    }
+
+    div {
+        /* 
+        font-family 属性用于指定文本的字体系列。
+        属性中列出多个字体名称，用逗号分隔，以提供备用选项。
+        如果字体名称包含空格或其他特殊字符，则需要使用引号将它们括起来。
+        */
+        font-family: myFont,黑体;
+
+        /* 元字重 */
+        font-weight: 500;
+
+        /* 字体大小 */
+        font-size: larger;
+
+        /* 文本颜色 */
+        color: aquamarine;
+
+        /* 字体的倾斜样式控制 */
+        font-style:italic;
+
+        /* 行高 */
+        line-height: 2rem;
+    }
+</style>
