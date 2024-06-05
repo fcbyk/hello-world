@@ -1,36 +1,62 @@
-<div>
-    <p>font-family属性指定一个元素的字体</p>
-</div>
+<div class="text-container-1">
+    <p class="text-style-1">这是一段示例文本，具有不同的样式。</p>
+    <p class="text-style-2">这是另一段文本，样式与之不同。</p>
+    <p class="text-style-3">这是第三段文本，样式再次变化。</p>
+</div><hr/>
 
 <style>
 
-    /* 使用@font-face 关键字下载网络字体，有2个必要属性 */
+    body{
+        margin: 100px;
+    }
+
+    /* 从网络或本地获取字体，并为其设置名字 */
     @font-face {
         font-family: "myFont";
         src: url("华康儿风体 Std W4.otf") format("opentype");
     }
 
-    div {
-        /* 
-        font-family 属性用于指定文本的字体系列。
-        属性中列出多个字体名称，用逗号分隔，以提供备用选项。
+    .text-container-1{
+        /*   
+        font-family 属性用于指定文本的字体系列。  
+        属性中列出多个字体名称，用逗号分隔，以提供备用选项。  
         如果字体名称包含空格或其他特殊字符，则需要使用引号将它们括起来。
+        注意在字体名中添加引号  
         */
-        font-family: myFont,黑体;
-
-        /* 元字重 */
-        font-weight: 500;
-
-        /* 字体大小 */
-        font-size: larger;
-
-        /* 文本颜色 */
-        color: aquamarine;
-
-        /* 字体的倾斜样式控制 */
-        font-style:italic;
-
-        /* 行高 */
-        line-height: 2rem;
+        font-family: "myFont", "黑体", sans-serif;
     }
+
+    .text-style-1{
+        font-weight: 500;
+        font-size: 1rem;
+        color: rgb(13, 56, 42);
+        font-style: italic; /* 倾斜 */
+        line-height: 2rem;  /* 行高 */
+        text-align: left;   /* 对齐方式 */
+        
+    }
+</style>
+
+
+<div class="text-container-2">  
+    <p class="decorated-text">这是带有下划线的文本。</p>  
+    <p class="indented-text">这是带有首行缩进的文本。</p>  
+    <p class="spaced-text">这是带有字符间距和单词间距的文本。</p>  
+</div><hr/>
+
+<style>
+
+  
+.decorated-text {  
+    text-decoration: underline; /* 添加下划线 */  
+}  
+  
+.indented-text {  
+    text-indent: 2em; /* 首行缩进两个字符宽度 */  
+}  
+  
+.spaced-text {  
+    letter-spacing: 0.5em; /* 字符间距 */  
+    word-spacing: 0.5em; /* 单词间距 */  
+}
 </style>
