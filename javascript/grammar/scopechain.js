@@ -1,3 +1,12 @@
+export const scope = {
+
+    // 作用域链
+    chain,
+
+    // 闭包
+    closure,
+}
+
 /**
  * JavaScript 的作用域链（Scope Chain）是指在函数嵌套结构中，每个执行上下文的变量对象（VO）及其对应的外部环境的集合。
  * 作用域链的形成是由 JavaScript 的词法作用域规则所决定的，即变量的作用域是在代码书写阶段就已经确定的，而不是在运行时确定的。
@@ -11,59 +20,59 @@
  */
 
 // 作用域链：作用域8 -> 作用域7 -> 作用域6 -> 作用域5 -> 作用域4 -> 作用域3 -> 作用域2 -> 作用域1 -> 作用域0
-(()=>{
 
-    // 作用域0
-    let hello = "作用域0 hello";
-    console.log(hello);  // 输出：作用域0 hello
+function chain(){
 
-    function first(){
-        // 作用域1
-        function second(){
-            // 作用域2
-            function third(){
-                let number = 123456789;  // 作用域3
-                function fourth(){
-                    // 作用域4
-                    console.log(hello);  // 输出：作用域0 hello
-                    
-                    function fifth(){
-                        // 作用域5
-                        let hello = "作用域5 hello";
-                        
-                        function sixth(){
-                            // 作用域6
-                            function seventh(){
-                                // 作用域7
-                                function eighth(){
-                                    // 作用域8
-                                    console.log(hello);  // 输出：作用域5 hello
-                                }
-                                eighth();  // 调用作用域8中的函数
-                            }
-                            seventh();  // 调用作用域7中的函数
-                        }
-                        sixth();  // 调用作用域6中的函数
-                    }
-                    // fifth();  // 作用域5中的函数并没有被调用
-                }
-                fourth();  // 调用作用域4中的函数
-            }
-            third();  // 调用作用域3中的函数
-        }
-        second();  // 调用作用域2中的函数
-    }
-    first();  // 调用作用域1中的函数
+    let msg = "作用域-1 msg";
 
-})();
-
-// 观察这个例子的作用域链
-let text = "hello world";
-(function(){
     (()=>{
-        console.log(text)
-    })()
-})();
+
+        // 作用域0
+        let hello = "作用域0 hello";
+        console.log(hello);  // 输出：作用域0 hello
+    
+        function first(){
+            // 作用域1
+            function second(){
+                // 作用域2
+                function third(){
+                    let number = 123456789;  // 作用域3
+                    function fourth(){
+                        // 作用域4
+                        console.log(hello);  // 输出：作用域0 hello
+                        
+                        function fifth(){
+                            // 作用域5
+                            let hello = "作用域5 hello";
+                            console.log(msg);
+                            
+                            function sixth(){
+                                // 作用域6
+                                function seventh(){
+                                    // 作用域7
+                                    function eighth(){
+                                        // 作用域8
+                                        console.log(hello);  // 输出：作用域5 hello
+                                    }
+                                    eighth();  // 调用作用域8中的函数
+                                }
+                                seventh();  // 调用作用域7中的函数
+                            }
+                            sixth();  // 调用作用域6中的函数
+                        }
+                        fifth();  // 调用作用域5中的函数
+                    }
+                    fourth();  // 调用作用域4中的函数
+                }
+                third();  // 调用作用域3中的函数
+            }
+            second();  // 调用作用域2中的函数
+        }
+        first();  // 调用作用域1中的函数
+    
+    })();
+
+}
 
 
 /**
@@ -91,25 +100,26 @@ let text = "hello world";
  * 
  */
 
-function makeCounter() {
-    let count = 0;
-    return function() {
-        return count++; // 返回并递增 count 的值
-    };
+function closure(){
+    function makeCounter() {
+        let count = 0;
+        return function() {
+            return count++; // 返回并递增 count 的值
+        };
+    }
+    
+    // 两个闭包环境，相互独立
+    let counter1 = makeCounter();
+    let counter2 = makeCounter();
+    
+    window.setInterval(()=>{
+        console.log("计数器1 = "+counter1());
+    },1000);
+    
+    window.setInterval(()=>{
+        console.log("计数器2 = "+counter2());
+    },2000);
 }
-
-// 两个闭包环境，相互独立
-let counter1 = makeCounter();
-let counter2 = makeCounter();
-
-window.setInterval(()=>{
-    console.log("计数器1 = "+counter1());
-},1000);
-
-window.setInterval(()=>{
-    console.log("计数器2 = "+counter2());
-},2000);
-
 
 /**
  * 在非模块化的 JavaScript 文件中，所有的代码都共享同一个全局作用域
