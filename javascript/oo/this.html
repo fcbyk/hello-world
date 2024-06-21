@@ -52,10 +52,10 @@
     (() => {
         console.log("箭头函数上下文" + this); // window
         new (function (name) {
-            this.name = name
+            this.name = name;
             (()=>{
                 console.log("普通函数内的箭头函数" + this + this.name);
-            })()
+            })();
         })("hhhh");
     })();
 
@@ -88,4 +88,34 @@
     obj.log()
     obj.child.log()
     obj.child.test()
+</script>
+
+<!-- 
+绑定this
+JavaScript提供了几个方法来显式地绑定this的值：call、apply和bind
+-->
+<script>
+// call 和 apply
+// 这两个方法都可以用来调用函数并显式地指定this的值。
+// 区别在于传递参数的方式不同：call接受的是参数列表，而apply接受的是参数数组。
+function greet(greeting,sdsd) {
+    console.log(greeting + sdsd+', ' + this + this.name);
+}
+
+const person = { name: 'call' };
+
+greet.call(person, 'Hello'); // 输出 'Hello, Alice'
+greet.apply(person, ['Hi',"www"]); // 输出 'Hiwww, Alice'
+greet("hhhh");
+
+// bind方法返回一个新的函数，并且这个函数的this值被永久地绑定到指定的对象。
+function greet1() {
+    console.log(this.name);
+}
+
+const person1 = { name: 'bind方法' };
+
+const boundGreet = greet1.bind(person1);
+boundGreet(); // 输出 'bind方法'
+
 </script>
