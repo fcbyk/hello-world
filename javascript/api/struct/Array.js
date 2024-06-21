@@ -1,9 +1,23 @@
-// 数组对象是指一组数据的集合，其中的每个数据被称作元素
-// js的数组可以存放任意类型的元素，例如字符串，数字，布尔值等
-// 数组的字面量是方括号 [ ]
+export const array = {
+    example:{
+        create,
+        assign
+    },
+    static:{
+        method:{
+            
+        }
+    }
+}
+
+/**
+ * 数组对象是指一组数据的集合，其中的每个数据被称作元素
+ * js的数组可以存放任意类型的元素，例如字符串，数字，布尔值等
+ * 数组的字面量是方括号 [ ]
+ */
 
 // 创建数组
-(function(){
+function create(){
     let ar1 = new Array(); // 创建了一个空的数组
 
     // 用字面量创建是推荐的简单作法
@@ -20,10 +34,10 @@
     const array2 = ["hdcms", "houdunren"];
     array2.push("houdunwang");
     console.log(array2);
-})();
+}
 
 // 数组赋值
-(function(){
+function assign(){
     // 数组可以设置任何值，下面是使用索引添加数组
     let hd = ["后盾人"];
     hd[1] = "hdcms";
@@ -40,10 +54,9 @@
     console.log(arr2[1]);
     console.log(arr2[2]);
     console.log(arr2[3]); // 因为没有这个数组元素 所以输出的结果是 undefined
-})();
+}
 
-// Array对象属性
-(function(){
+function attribute(){
     let arr = new Array();
     console.log(arr);
 
@@ -56,13 +69,14 @@
     Array.prototype.test = "尼禄";
     console.log(arr.test);
     console.log(arr);
-})();
+}
 
 // Array 对象方法 - 增删
 // js的数组是一个线性表数据结构，可以当作栈，队列使用
 // 有压栈，弹栈方法，也有出队入队方法等
-// 物理结构不知道，应该是顺序存储，查找效率高，增删效率低
-(function(){
+// 查找效率高，增删效率低
+function add(){
+
     // push() 压栈，向数组的末尾添加一个或更多元素，并返回新的长度
     let fruits = ["Banana", "Orange", "Apple", "Mango"];
     console.log(fruits);
@@ -107,12 +121,13 @@
     let b = ["Runoob", "Wiki", "Zhihu"];
     let c = a.concat(b);
     console.log(c);
-})();
+}
+
 
 // Array 对象的迭代器
 // entries()，返回数组的可迭代对象
 // keys()，返回数组的可迭代对象，包含原始数组的键(key)
-(function(){
+function iterator(){
     let fruits = ["Banana", "Orange", "Apple", "Mango"];
     console.log(fruits.entries());
     console.log(fruits.entries().next());
@@ -127,9 +142,4 @@
     console.log(b.next());
     console.log(b.next().value);
     console.log(b.next().value);
-})();
-
-// Array 对象方法 - 查找
-(function(){
-    
-})();
+}
