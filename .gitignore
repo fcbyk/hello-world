@@ -6,3 +6,9 @@ dist
 # clion
 .idea
 cmake-build-debug
+
+# idea
+*.iws
+*.iml
+*.ipr
+target
