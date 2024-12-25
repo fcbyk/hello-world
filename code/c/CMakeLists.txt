@@ -3,5 +3,9 @@ project(c C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(c main.c
-        grammar/scope.c)
+add_executable(c
+        grammar/scope.c
+        header/header.h
+        header/test_header.c
+        header/test_header_run.c
+)
