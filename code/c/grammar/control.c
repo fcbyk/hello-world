@@ -39,7 +39,6 @@ void b(){
 
 void c(){
     // #region for
-
     for (int i = 0; i < 10; ++i) {
         printf("%d",i);
     }
@@ -60,12 +59,11 @@ void d(){
     int a = 1;
     do a++;
     while (a < 5);
-    // #endregion whlie
+    // #endregion while
 }
 
 void e(){
     // #region goto
-
     printf("Before goto\n");
     goto jump; // 跳转到 label "jump"
 
