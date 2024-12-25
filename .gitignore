@@ -1,3 +1,8 @@
+# vitepress
 node_modules
 cache
 dist
+
+# clion
+.idea
+cmake-build-debug
