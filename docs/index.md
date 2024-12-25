@@ -1,4 +1,4 @@
-
-``` js
-console.log("hello world")
-```
+<script setup>
+import { useRouter } from "vitepress";
+useRouter().go("/backend/c")
+</script>
