@@ -10,4 +10,5 @@ add_executable(c
         header/test_header_run.c
         grammar/comment.c
         grammar/control.c
+        grammar/type.c
 )
