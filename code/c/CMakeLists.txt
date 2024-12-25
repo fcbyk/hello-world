@@ -8,4 +8,6 @@ add_executable(c
         header/header.h
         header/test_header.c
         header/test_header_run.c
+        grammar/comment.c
+        grammar/control.c
 )
