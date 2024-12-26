@@ -13,4 +13,6 @@ add_executable(c
         grammar/type.c
         grammar/var.c
         grammar/internal.c
+        grammar/operator.c
+        grammar/function.c
 )
