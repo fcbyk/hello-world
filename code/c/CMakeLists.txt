@@ -11,4 +11,6 @@ add_executable(c
         grammar/comment.c
         grammar/control.c
         grammar/type.c
+        grammar/var.c
+        grammar/internal.c
 )
