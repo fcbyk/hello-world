@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(cpp main.cpp
         grammar/template.cpp
-        api/stl/index.cpp)
+        api/stl/index.cpp
+        grammar/function.cpp
+        grammar/internal.cpp)
