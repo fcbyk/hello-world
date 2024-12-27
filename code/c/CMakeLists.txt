@@ -15,4 +15,7 @@ add_executable(c
         grammar/internal.c
         grammar/operator.c
         grammar/function.c
+        grammar/array.c
+        grammar/struct.c
+        grammar/pointer.c
 )
