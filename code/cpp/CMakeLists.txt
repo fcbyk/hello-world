@@ -9,4 +9,5 @@ add_executable(cpp
         grammar/function.cpp
         grammar/internal.cpp
         grammar/obj.cpp
-        grammar/operator.cpp)
+        grammar/operator.cpp
+        grammar/oop.cpp)
