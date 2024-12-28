@@ -1,3 +1,8 @@
 import { DefaultTheme } from "vitepress";
 
-export default [] as DefaultTheme.SidebarItem[]
+export default [
+    {
+        text:"JavaScript",
+        link:"js"
+    }
+] as DefaultTheme.SidebarItem[]
