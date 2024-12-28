@@ -8,4 +8,5 @@ add_executable(cpp
         api/stl/index.cpp
         grammar/function.cpp
         grammar/internal.cpp
-        grammar/oop.cpp)
+        grammar/obj.cpp
+        grammar/operator.cpp)
