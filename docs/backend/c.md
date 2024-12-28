@@ -41,9 +41,9 @@ gcc --version
     - 头文件用于使多个源文件之间可以共享函数声明和宏定义等公共信息
     - 头文件只写声明，在源文件写实现
 ::: code-group
-<<< @/../code/c/header/header.h#index{c}
-<<< @/../code/c/header/test_header_run.c#index [main.c]
-<<< @/../code/c/header/test_header.c [implement.c]
+<<< @/../code/c/files/header_files.h#index{c}
+<<< @/../code/c/files/others.c#index [main.c]
+<<< @/../code/c/files/source_files.c [implement.c]
 :::
 - 源文件
 ::: code-group

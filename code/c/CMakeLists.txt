@@ -5,9 +5,9 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(c
         grammar/scope.c
-        flies/header_files.h
-        flies/source_files.c
-        flies/others.c
+        files/header_files.h
+        files/source_files.c
+        files/others.c
         grammar/comment.c
         grammar/control.c
         grammar/type.c
