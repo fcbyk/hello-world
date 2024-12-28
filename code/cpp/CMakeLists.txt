@@ -10,4 +10,5 @@ add_executable(cpp
         grammar/internal.cpp
         grammar/obj.cpp
         grammar/operator.cpp
-        grammar/oop.cpp)
+        grammar/oop.cpp
+        api/stream/fstream.cpp)
