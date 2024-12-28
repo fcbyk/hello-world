@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import sidebar from './configs/sidebar'
+import nav from './configs/nav'
 
 export default defineConfig({
   title: "HELLO",
@@ -12,5 +13,6 @@ export default defineConfig({
     ],
     outline:[2,3],
     sidebar,
+    nav,
   }
 })
