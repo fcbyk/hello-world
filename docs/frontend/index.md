@@ -1,5 +1,7 @@
 # web前端
 
+[哔哩哔哩评论区笔记](https://www.yuque.com/cessstudy/kak11d)
+
 ## Web 1.0
 > 1990年代中期 — 2000年代初
 
