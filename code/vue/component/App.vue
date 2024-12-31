@@ -1,13 +1,19 @@
 <script setup>
-import { ref } from "vue";
 import SlotsTest from "./SlotsTest.vue";
+import PropsTest from "./PropsTest.vue";
+import { provide } from 'vue'
 
-const count = ref(0);
+const dataB = {
+  description:"App dataB"
+}
+
+provide('location', {
+  x:199.23,
+  y:234.23
+})
 </script>
 
 <template>
-  <button @click="count++">You clicked me {{ count }} times.</button>
-
   <SlotsTest>
     <!-- 注意这里是传给指令的arg，而不是value -->
     <template v-slot:header>
@@ -30,10 +36,12 @@ const count = ref(0);
     <!-- header无内容，会渲染一个空元素 -->
 
     <!-- 隐式的默认插槽 -->
-     <hr/>
+    <hr/>
     <p>A paragraph for the main content.</p>
     <p>And another one.</p>
 
     <!-- footer插槽无内容覆盖，会显示默认内容 -->
   </SlotsTest>
+
+  <PropsTest dataA="hello" :dataB/>
 </template>
