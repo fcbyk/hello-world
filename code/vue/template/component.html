@@ -1,0 +1,23 @@
+<div id="app">
+    <Counter></Counter>
+</div>
+
+<script type="module">
+  import {
+    createApp,
+    ref,
+  } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+  let Counter = {
+    setup: () => ({ count: ref(0) }),
+    template: `
+    <button @click="count++">
+      You clicked me {{ count }} times.
+    </button>`,
+  };
+
+  createApp({
+    setup: () => ({}),
+    components: { Counter },
+  }).mount("#app");
+</script>

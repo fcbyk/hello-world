@@ -1,0 +1,108 @@
+<!-- https://cn.vuejs.org/api/built-in-directives.html -->
+
+<div id="app">
+  <h1 v-show="ok">Hello!</h1>
+
+  <div v-if="type === 'A'">A</div>
+  <div v-else-if="type === 'B'">B</div>
+  <div v-else-if="type === 'C'">C</div>
+  <div v-else>Not A/B/C</div>
+
+  <div v-bind:id="dynamicId">Attribute 绑定</div>
+  <div :id="dynamicId">v-bind简写</div>
+  <div :id>v-bind同名简写</div>
+  <div v-bind="objectOfAttrs">动态绑定多个值</div>
+  <div :[attr]="dynamicId"> 动态参数，[JavaScript 表达式] </div>
+
+  <button v-on:click="count++">Add 1</button>
+  <button @click="count++">v-on简写</button>
+  <p>Count is: {{ count }}</p>
+  <button @click="say('hello')">Say hello</button>
+  <button @click="say('bye')">Say bye</button>
+
+  <p>Message is: {{ message }}</p>
+  <input v-model="message" placeholder="edit me" />
+
+  <li v-for="item in items">{{ item.message }}</li>
+  <li v-for="(value, key, index) in myObject">
+    {{ index }}. {{ key }}: {{ value }}
+  </li>
+
+  <p v-text="msg"></p>
+  <!-- 等同于 -->
+  <p>{{msg}}</p>
+
+  <div v-highlight>自定义指令v-highlight，使用f12查看该元素的class</div>
+  <div v-example:foo.bar="baz"></div>
+  <div v-example:[foo].hello.world="baz"></div>
+</div>
+
+<script type="module">
+  import {
+    createApp,
+    ref,
+  } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+  createApp({
+    setup: () => ({
+      type: "B",
+      ok: false,
+
+      dynamicId: "bind",
+      id: "bind",
+      objectOfAttrs: {
+        id: "bind",
+        class: "wrapper",
+        style: "background-color:black",
+      },
+      attr:"id",
+
+      count: ref(0),
+      say(message) {
+        alert(message);
+      },
+
+      message: ref(""),
+
+      items: [{ message: "Foo" }, { message: "Bar" }],
+      myObject: {
+        title: "How to do lists in Vue",
+        author: "Jane Doe",
+        publishedAt: "2016-04-10",
+      },
+
+      msg: "hello",
+
+      foo: {
+        key1: 100,
+        key2: "value2",
+      },
+      baz:"自定义指令"
+    }),
+    directives: {
+      highlight: {
+        mounted: (el) => {
+          el.classList.add("is-highlight");
+        },
+      },
+      example: {
+        created(el, binding, vnode) {},
+        beforeMount(el, binding, vnode) {},
+        mounted(el, binding, vnode) {
+          console.log(binding);
+        },
+        beforeUpdate(el, binding, vnode, prevVnode) {},
+        updated(el, binding, vnode, prevVnode) {},
+        beforeUnmount(el, binding, vnode) {},
+        unmounted(el, binding, vnode) {},
+      }
+    },
+  }).mount("#app");
+</script>
+
+<style>
+  #bind {
+    font-size: 1.5rem;
+    color: chocolate;
+  }
+</style>
