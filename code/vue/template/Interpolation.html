@@ -1,0 +1,17 @@
+<div id="app">
+    <div>{{ message }}</div>
+    <div>{{A>B?A:B}}</div>
+    <div>{{1+1}}</div>
+</div>
+
+<script type="module">
+  import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+
+  createApp({
+    setup: () => ({
+      message: "文本插值",
+      A:1,
+      B:2,
+    }),
+  }).mount("#app");
+</script>
