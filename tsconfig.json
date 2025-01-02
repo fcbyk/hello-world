@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [".vitepress/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", ".vitepress/**/*"],
+  "exclude": ["node_modules", "code", "data"]
+}
