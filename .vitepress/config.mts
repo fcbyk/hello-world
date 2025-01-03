@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
-import sidebar from './configs/sidebar'
-import nav from './configs/nav'
+import sidebar from './sidebar'
+import nav from './nav'
 
 export default defineConfig({
   title: "HELLO",

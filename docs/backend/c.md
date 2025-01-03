@@ -1,9 +1,4 @@
-<script setup  lang="ts">
-import history from "./../../data/history/c";
-</script>
-
 # C语言
-<HistoryDialog :history/>
 
 ## 环境搭建
 [MinGW](https://www.mingw-w64.org/downloads/)<span style="margin-right:0.5rem"></span>

@@ -1,7 +1,7 @@
 import { DefaultTheme } from "vitepress";
-import index from "../../docs/sidebar"
-import backend from "../../docs/backend/sidebar"
-import friontend from "../../docs/frontend/sidebar"
+import index from "../docs/sidebar"
+import backend from "../docs/backend/sidebar"
+import friontend from "../docs/frontend/sidebar"
 
 export default {
     "/":index,
