@@ -1,5 +1,5 @@
 <script setup  lang="ts">
-import history from "./../../history/c";
+import history from "./../../data/history/c";
 </script>
 
 # C语言
