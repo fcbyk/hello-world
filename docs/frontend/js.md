@@ -93,8 +93,9 @@
 > JavaScript 语言核心功能，由 ECMAScript 规范定义的 API
 
 ## 浏览器 API
-[mdn文档](https://developer.mozilla.org/zh-CN/docs/Web/API)<span style="margin-right:0.5rem"></span>
-[别人的AJAX笔记](https://www.yuque.com/u21195183/zr3z4r/imun20)
+<LinkBtn url="https://developer.mozilla.org/zh-CN/docs/Web/API">mdn文档</LinkBtn>
+<LinkBtn url="https://www.yuque.com/u21195183/zr3z4r/imun20">别人的AJAX笔记</LinkBtn>
+
 > 由浏览器提供的环境特定 API，涵盖 DOM 操作、网络请求等。
 
 > 浏览器 API（Web API）的标准通常由 W3C（World Wide Web Consortium，万维网联盟）和 WHATWG（Web Hypertext Application Technology Working Group，Web 超文本应用技术工作组）等组织共同定义和维护。它们负责制定和推动 Web 技术和标准的发展。

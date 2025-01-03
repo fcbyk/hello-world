@@ -1,9 +1,10 @@
 # C语言
 
 ## 环境搭建
-[MinGW](https://www.mingw-w64.org/downloads/)<span style="margin-right:0.5rem"></span>
-[CLion](https://www.jetbrains.com/clion/)<span style="margin-right:0.5rem"></span>
-[在线编译](https://www.jyshare.com/compile/11/)
+<LinkBtn text="MinGW" url="https://www.mingw-w64.org/downloads/"/>
+<LinkBtn text="CLion" url="https://www.jetbrains.com/clion/"/>
+<LinkBtn text="在线编译" url="https://www.jyshare.com/compile/11/"/>
+
 ::: code-group
 ```powershell [window]
 # 下载编译器，并配置环境变量

@@ -1,6 +1,6 @@
 # web前端
-
-[哔哩哔哩评论区笔记](https://www.yuque.com/cessstudy/kak11d)
+<div style="height: 10px;"></div>
+<LinkBtn url="https://www.yuque.com/cessstudy/kak11d">哔哩哔哩评论区笔记</LinkBtn>
 
 ## Web 1.0
 > 1990年代中期 — 2000年代初
