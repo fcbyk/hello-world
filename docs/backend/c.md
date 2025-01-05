@@ -1,4 +1,12 @@
+<script setup>
+import history from './../../.vitepress/data/c'
+</script>
+
 # C语言
+
+## 发展历史
+
+<HistoryDialog :history/>
 
 ## 环境搭建
 <LinkBtn text="MinGW" url="https://www.mingw-w64.org/downloads/"/>
