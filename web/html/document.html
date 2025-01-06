@@ -1,0 +1,32 @@
+<!-- 多个DOCTYPE、html标签，只有第一个生效， 第一个html标签自动生成head和body子元素-->
+
+<!-- #region doctype -->
+<!-- 必须放在第一行 -->
+<!DOCTYPE html>
+<!-- #endregion doctype -->
+
+<!-- #region html -->
+<!DOCTYPE html>
+<html lang="zh-CN" id="1">
+    <!-- 网页内容 -->
+</html> 
+<!-- #endregion html -->
+
+<!-- #region head -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head id="2">
+        <!-- head标签包含了文档的元信息，不会直接显示在页面上 -->
+    </head>
+</html>
+<!-- #endregion head -->
+
+<!-- #region body -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head></head>
+    <body>
+        <!-- 页面主要内容 -->
+    </body>
+</html>
+<!-- #endregion body -->

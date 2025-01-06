@@ -1,0 +1,124 @@
+<!-- 以下格式，控制台会直接报错 -->
+
+<!-- #region title -->
+<head>
+    <title>我的技术博客</title>
+</head>
+<!-- #endregion title -->
+
+<!-- #region meta -->
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 视口设置（移动端响应式） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  SEO相关元信息 -->
+    <meta name="description" content="这是一个关于HTML meta标签的详细介绍">
+    <meta name="keywords" content="HTML, meta标签, 网页开发">
+    <meta name="author" content="张三">
+
+    <!-- 搜索引擎控制 -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- 页面刷新和跳转 -->
+    <meta http-equiv="refresh" content="3">
+    <meta http-equiv="refresh" content="3;url=https://example.com">
+
+    <!-- 浏览器兼容性 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 移动设备特定meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#000000">
+
+    <!-- 社交媒体分享 -->
+     <!-- Open Graph协议（Facebook） -->
+    <meta property="og:title" content="网页标题">
+    <meta property="og:description" content="网页描述">
+    <meta property="og:image" content="缩略图URL">
+    <meta property="og:url" content="网页URL">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="网页标题">
+    <meta name="twitter:description" content="网页描述">
+    <meta name="twitter:image" content="缩略图URL">
+
+    <!-- 内容安全策略 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+    <!-- 自定义数据 -->
+    <meta name="custom-data" content="特殊信息">
+</head>
+<!-- #endregion meta -->
+
+<!-- #region link -->
+<head>
+    <link 
+        rel="关系类型"       
+        href="资源路径"
+        type="MIME类型"
+        media="媒体查询"      
+        crossorigin="anonymous" 
+    >
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 600px)">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32">
+
+    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="alternate" type="application/rss+xml" title="博客RSS" href="/rss">
+
+    <link rel="canonical" href="https://example.com/current-page">
+
+    <link rel="apple-touch-icon" href="ios-icon.png">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<!-- #endregion link -->
+
+
+<!-- #region style -->
+<head>
+    <style scoped>
+        body { 
+            background-color: #f4f4f4; 
+        }
+    </style>
+</head>
+<!-- #endregion style -->
+
+<!-- #region script -->
+<head>
+    <script src="analytics.js"></script>
+    <script>
+        // 页面加载前执行的脚本
+        window.addEventListener('load', function() {
+            console.log('页面已加载');
+        });
+    </script>
+</head>
+<!-- #endregion script -->
+
+<!-- #region noscript -->
+<head>
+    <!-- 不支持JavaScript时 -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=no-js-version.html">
+    </noscript>
+</head>
+<!-- #endregion noscript -->
+
+<!-- #region base -->
+<head>
+    <base href="https://example.com/">
+    <base target="_blank">
+</head>
+<!-- #endregion base -->
