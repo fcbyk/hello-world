@@ -1,4 +1,4 @@
-package com.fcbyk;
+package com.fcbyk.start;
 
 public class Main {
     public static void main(String[] args) {
