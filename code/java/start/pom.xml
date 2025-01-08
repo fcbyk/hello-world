@@ -8,6 +8,10 @@
     <artifactId>start</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- 炸包，哇包  -->
+    <!-- 打包方式，默认为 jar包，web项目需要打包成 war包 -->
+    <packaging>war</packaging>
+
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
@@ -21,6 +25,39 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- servlet 依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+
+            <!-- scope设置为 provided。这意味着在编译和测试阶段依赖项会被包含，但在打包成 WAR 文件时不会被包含 -->
+            <!--
+              此处为什么需要添加该标签?
+              provided指的是在编译和测试过程中有效,最后生成的war包时不会加入
+               因为Tomcat的lib目录中已经有servlet-api这个jar包，如果在生成war包的时候生效就会和Tomcat中的jar包冲突，导致报错
+            -->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!--Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>80</port><!--访问端口号 -->
+                    <path>/</path>
+                    <!-- 使用命令运行插件: mvn tomcat7:run -->
+                    <!-- 如果是idea内置的maven，请使用GUI形式执行maven命令 -->
+                    <!-- 浏览器访问: http://localhost/-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
