@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- #region beanattr -->
+    <!-- bean标签标示配置bean
+    	 id属性标示给bean起名字
+    	 class属性表示给bean定义类型
+    	 name属性定义别名
+    	 scope属性配置bean作用范围（单例和非单例）
+    	 init-method 属性指定生命周期函数（bean创建之后）
+    	 destroy-method 属性指定生命周期函数（bean销毁之前）,scope改成单例才执行
+    	 autowire 属性表示自动装配类型
+    	 factory-method 属性表示bean工厂方法（静态工厂或实例工厂）
+    	 factory-bean 属性表示实例工厂的bean
+    	 lazy-init 属性控制bean延迟加载
+    	 -->
+    <!--  bean实例化  -->
+    <!--  实例化bean的三种方式，构造方法,静态工厂和实例工厂  -->
+
+    <!--  构造方法实例化  -->
+    <!--  能访问到类中的私有构造方法,显而易见Spring底层用的是反射  -->
+    <bean id="beanLife"
+          class="com.fcbyk.springframework.bean.BeanLifeCycle"
+          init-method="init"
+          destroy-method="destroy"
+    />
+
+    <!--  静态工厂实例化  -->
+    <bean id="myOrder" class="com.fcbyk.springframework.bean.MyOrderFactory" factory-method="getOrder" />
+    <!-- #endregion beanattr -->
+
+</beans>
