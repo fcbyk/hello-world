@@ -14,4 +14,13 @@ public class TestDI {
 
         helloDI.test();
     }
+
+    @Test
+    public void test02(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("di.xml");
+
+        XMLDI xmldi = (XMLDI) ctx.getBean("xmldi");
+
+        xmldi.test();
+    }
 }
