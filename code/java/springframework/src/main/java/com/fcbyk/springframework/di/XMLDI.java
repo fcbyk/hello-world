@@ -1,9 +1,11 @@
 package com.fcbyk.springframework.di;
 import com.fcbyk.springframework.bean.Book;
 import com.fcbyk.springframework.bean.MyOrder;
+import lombok.Setter;
 
 import java.util.*;
 
+@Setter
 public class XMLDI {
 
     private final String addr;
@@ -29,35 +31,6 @@ public class XMLDI {
     private Set<String> set;
     private Map<String,String> map;
     private Properties properties;
-
-    // 提供setter方法
-    public void setBook(Book book) {
-        this.book = book;
-    }
-    public void setOrder(MyOrder order) {
-        this.order = order;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-    public void setArray(int[] array) {
-        this.array = array;
-    }
-    public void setList(List<String> list) {
-        this.list = list;
-    }
-    public void setSet(Set<String> set) {
-        this.set = set;
-    }
-    public void setMap(Map<String, String> map) {
-        this.map = map;
-    }
-    public void setProperties(Properties properties) {
-        this.properties = properties;
-    }
 
     // 测试输出
     public void test(){

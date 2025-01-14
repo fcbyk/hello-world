@@ -1,10 +1,15 @@
 package com.fcbyk.springframework.ioc;
 
 import com.fcbyk.springframework.bean.Book;
+import com.fcbyk.springframework.config.SpringConfig;
+import com.fcbyk.springframework.di.DIAnnotation;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import javax.sql.DataSource;
 
 /**
  * ApplicationContext 是 Spring 框架中的一个接口，它是 Spring IoC 容器的顶层接口，
@@ -39,5 +44,28 @@ public class ApplicationContext_ {
 
         // 文件系统下的XML配置文件
         ApplicationContext ctx2 = new FileSystemXmlApplicationContext("springframework/src/main/resources/applicationContext.xml");
+    }
+
+    @Test
+    // 管理第三方bean
+    public void getDataSource(){
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("third-bean.xml");
+        // 获取DruidDataSource对象
+        DataSource dataSource = (DataSource) ctx.getBean("dataSource");
+        System.out.println(dataSource);
+    }
+
+    @Test
+    // 使用注解
+    public void annotationDev(){
+        // #region aioc
+        // 通过配置类生成的容器，无法使用xml里的bean，因为ComponentScan扫描不了xml里的包
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
+
+        DIAnnotation a = (DIAnnotation) ctx.getBean("DIAnnotation");
+
+        System.out.println(a.getName());
+        a.getBook().test();
+        // #endregion aioc
     }
 }

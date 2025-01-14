@@ -32,5 +32,34 @@
         </dependency>
         <!-- #endregion sp -->
 
+        <!--  数据库连接池Druid  -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <!--  JDBC  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+
+        <!--Spring操作数据库需要该jar包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>6.0.7</version>
+        </dependency>
+
+        <!-- Lombok 自动生成 Getter 和 Setter -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>
