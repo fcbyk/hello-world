@@ -1,0 +1,10 @@
+// prompt start
+${foo}是占位符，例如我输入foo=c++，给foo赋值，你需要按以下格式回答
+你的回答只需要是一个TimelineData类型的默认导出ts数组对象，例如 export default [] as TimelineData;
+type TimelineData = {
+  date: string;
+  title: string;
+  description: string;
+}[];
+该数组对象应是${foo}的发展历史的简单概括
+// prompt end
