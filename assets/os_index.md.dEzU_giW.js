@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.BOM1ST4q.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"os/index.md","filePath":"os/index.md"}'),o={name:"os/index.md"};function n(s,r,c,d,i,p){return a(),t("div")}const f=e(o,[["render",n]]);export{m as __pageData,f as default};

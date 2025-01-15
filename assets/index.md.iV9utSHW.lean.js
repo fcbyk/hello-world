@@ -1,0 +1,1 @@
+import{a1 as e,c as t,o as a}from"./chunks/framework.BOM1ST4q.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),n={name:"index.md"},i=Object.assign(n,{setup(r){return e().go("/backend/c"),(s,c)=>(a(),t("div"))}});export{d as __pageData,i as default};
