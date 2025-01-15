@@ -11,6 +11,16 @@ export default [
     },
     {
         text:"Java",
-        link:"java"
+        link:"java",
+        items: [
+            {
+              text: "MyBaits",
+              link: "mybaits",
+            },
+            {
+              text: "Spring",
+              link: "spring",
+            }
+        ]
     }
 ] as DefaultTheme.SidebarItem[]
