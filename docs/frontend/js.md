@@ -11,8 +11,22 @@ import history from './../../.vitepress/data/js'
 - 最初的脚本文件（1990年代中期）
 - IIFE（1999年及以后）
 - CommonJS（2009年，Node.js)
+::: code-group
+<<< @/../web/js/module/CommonJS.js#module [module对象]
+<<< @/../web/js/module/CommonJS.js#exports [exports引用]
+<<< @/../web/js/module/CommonJS.js#require [require函数]
+:::
+
 - AMD（Asynchronous Module Definition）（2010年左右）
+
 - ES6模块（2015年）
+::: code-group
+<<< @/../web/js/module/ESM.js#named [命名导出]
+<<< @/../web/js/module/ESM.js#default [默认导出]
+<<< @/../web/js/module/ESM.js#import [导入]
+<<< @/../web/js/module/ESM.js#dynamic [动态导入]
+<<< @/../web/js/module/ESM.js#cdn [CDN]
+:::
 
 ## ECS API
 > JavaScript 语言核心功能，由 ECMAScript 规范定义的 API

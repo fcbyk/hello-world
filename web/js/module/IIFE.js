@@ -5,6 +5,7 @@
  * IIFE是一种自我封装的方式，可以使得代码模块化，但它并没有引入像import和export这样的语法，也没有真正的模块系统。
  */
 
+// #region index
 (function() {
     // privateVar 和 privateFunction 被封装在 IIFE 内部
     var privateVar = 'I am private';
@@ -16,6 +17,10 @@
     window.myModule = {
       publicMethod: function() {
         console.log('Public method');
+      },
+      getPrivateVar: function() {
+        return privateVar;
       }
     };
 })();
+// #endregion index

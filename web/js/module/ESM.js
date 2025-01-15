@@ -7,6 +7,7 @@
  * 解决了跨平台的模块化问题，兼容浏览器和Node.js。
  */
 
+// #region named
 /**
  * 命名导出 (named export)
  * 命名导出允许你导出一个或多个变量、函数或类，可以使用 export 关键字直接导出
@@ -29,7 +30,9 @@ export class Circle {
     return pi * this.radius * this.radius;
   }
 }
+// #endregion named
 
+// #region default
 /**
  * 默认导出 (default export)
  * 默认导出用于导出模块的单一内容，可以是一个对象、函数、类等。每个模块只能有一个默认导出。
@@ -38,7 +41,9 @@ export class Circle {
 export default function multiply(a, b) {
     return a * b;
 }
+// #endregion default
 
+// #region import
 /**
  * 命名导入
  * 命名导入用于导入通过命名导出的模块内容。你必须使用与导出时相同的名字。
@@ -65,7 +70,9 @@ import multiply, { add, pi } from './math.js';
  * 通过math对象的属性进行访问，匿名默认导出通过math.default属性访问
  */
 import * as math from './math.js';
+// #endregion import
 
+// #region cdn
 /**
  * 导入 CDN 上的模块(使用 ESM 版本) 
  * 这种导入方式仅在 浏览器环境 中生效，通常是在<script type="module"> 标签使用
@@ -74,7 +81,9 @@ import * as math from './math.js';
  * 支持 CORS，当你通过 import 从外部 URL 导入模块时，浏览器会检查该文件是否允许跨源请求。这通常需要 CORS（跨源资源共享） 头部的支持。
  */
 import { debounce } from 'https://cdn.jsdelivr.net/npm/lodash-es@4.17.21/lodash.js';
+// #endregion cdn
 
+// #region dynamic
 /**
  * 动态导入
  * 使用 import() 函数来按需加载 JavaScript 模块
@@ -92,6 +101,7 @@ const moduleName = './math.js';
 import(moduleName).then(module => {
   console.log(module.add(2, 3));
 });
+// #endregion dynamic
 
 /**
  * 文件后缀

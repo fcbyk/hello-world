@@ -5,6 +5,7 @@
  * CommonJS使得Node.js能够在服务器端使用模块化，适用于同步加载模块的场景，但由于其同步特性并不适用于浏览器。
  */
 
+// #region module
 /**
  * module 对象
  * 每个文件在 Node.js 中都拥有一个 module 对象
@@ -33,7 +34,9 @@ module.exports = {
  */
 console.log(module.filename); // 输出当前文件的完整路径
 console.log(module.id); // 输出当前模块的唯一标识符
+// #endregion module
 
+// #region exports
 /**
  * exports
  * exports 是 module.exports 的快捷引用。它们实际上指向同一个对象
@@ -53,7 +56,9 @@ exports.subtract = function(a, b) {
 exports = {
     add: function(a, b) { return a + b; }
 };
+// #endregion exports
 
+// #region require
 /**
  * 导入
  * require() 是 Node.js 提供的一个全局函数
@@ -64,6 +69,8 @@ exports = {
 const fs = require('fs');  // 加载 Node.js 的文件系统模块
 const math = require('./math');  // 假设 math.js 存在，加载当前目录下的 math.js 文件
 const express = require('express');  // 加载 npm 安装的 express 模块
+// #endregion require
+
 
 /**
  * 缓存机制

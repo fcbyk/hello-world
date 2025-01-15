@@ -4,9 +4,11 @@
  * 早期的JavaScript模块化实践通常是通过全局变量或对象来模拟模块化，但这种方式容易引发命名冲突和难以扩展的问题。
  */
 
+// #region index
 // 定义一个全局对象
 var utils = {
     getHelloFunction(){
         return ()=>console.log("hello worldL")
     }
 }
+// #endregion index
