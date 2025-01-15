@@ -8,5 +8,9 @@ export default [
     {
         text:"C++",
         link:"cpp"
+    },
+    {
+        text:"Java",
+        link:"java"
     }
 ] as DefaultTheme.SidebarItem[]
