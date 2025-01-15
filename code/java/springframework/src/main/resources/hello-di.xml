@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- #region index -->
     <bean id="book"
           name="book1,book2"
           class="com.fcbyk.springframework.bean.Book"
@@ -11,5 +12,6 @@
     <bean id="helloDI" class="com.fcbyk.springframework.di.HelloDI">
         <property name="book" ref="book"/>
     </bean>
+    <!-- #endregion index -->
 
 </beans>

@@ -27,6 +27,7 @@
 
         <!-- Spring的依赖包 -->
         <!-- #region sp -->
+        <!-- spring-context：包含了 Spring 核心功能（如IoC容器和AOP等） -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -64,17 +65,39 @@
         </dependency>
 
         <!-- SpringMVC需要的依赖 -->
+
+        <!-- #region webmvc -->
+        <!-- spring-webmvc：包含了 Spring MVC 框架的实现，提供了控制器、视图解析器等功能。 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.10.RELEASE</version>
+        </dependency>
+        <!-- #endregion webmvc -->
+
+        <!-- #region web -->
+        <!-- Optional: Spring Web (if you need more web-related functionality like REST, etc.) -->
+        <!-- spring-web：提供了Web相关的基础设施，适用于RESTful服务等。 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.10.RELEASE</version>
+        </dependency>
+        <!-- #endregion web -->
+
+        <!-- #region servlet -->
+        <!-- Servlet API (if not provided by your container) -->
+        <!-- javax.servlet-api：
+            如果你使用的是 Tomcat 或其他 Servlet 容器，通常这个依赖是由容器提供的。
+            否则，你可能需要手动添加它。
+         -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.2.10.RELEASE</version>
-        </dependency>
+        <!-- #endregion servlet -->
 
     </dependencies>
 

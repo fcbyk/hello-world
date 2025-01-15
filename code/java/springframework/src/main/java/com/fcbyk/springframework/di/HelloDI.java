@@ -2,6 +2,7 @@ package com.fcbyk.springframework.di;
 
 import com.fcbyk.springframework.bean.Book;
 
+// #region index
 public class HelloDI {
 
     // private Book book = new Book("数据结构");
@@ -17,3 +18,4 @@ public class HelloDI {
         System.out.print(book);
     }
 }
+// #endregion index

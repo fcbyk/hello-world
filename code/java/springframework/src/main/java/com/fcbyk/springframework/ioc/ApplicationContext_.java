@@ -23,6 +23,7 @@ public class ApplicationContext_ {
 
     @Test
     public void helloIoc(){
+        // #region getioc
         //获取IOC容器
         ApplicationContext ctx = new ClassPathXmlApplicationContext("hello-ioc.xml");
 
@@ -35,6 +36,7 @@ public class ApplicationContext_ {
         book2.test();
         Book book3 = (Book)ctx.getBean("book2");
         book3.test();
+        // #endregion getioc
     }
 
     // IOC容器的创建方式
