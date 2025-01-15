@@ -1,6 +1,6 @@
 {
 	"新建一个片段,用于导入md文档": {
-		"scope": "javascript,typescript,java",
+		"scope": "javascript,typescript,java,cpp",
 		"prefix": "new#",
 		"body": [
 			"// #region $1",

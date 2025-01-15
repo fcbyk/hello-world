@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+// #region containers
 /**
  * 容器（Containers）
  * 容器是 STL 中用来存储数据的组件
@@ -34,7 +35,9 @@ void containers(){
     v.reserve(20);              // 预留容量以避免频繁分配内存
     v.shrink_to_fit();          // 收缩容量以适应实际大小
 }
+// #endregion containers
 
+// #region iterators
 /**
  * 迭代器（Iterators）
  * 连接容器和算法
@@ -52,7 +55,9 @@ void iterators(){
     // 使用范围 for 循环（C++11）
     for (int x : v) cout << x << " ";
 }
+// #endregion iterators
 
+// #region algorithms
 /**
  * 算法（Algorithms）
  * 对数据执行操作
@@ -93,7 +98,9 @@ void algorithms() {
     }
     cout << endl;
 }
+// #endregion algorithms
 
+// #region functionObjects
 /**
  * 仿函数（Function Objects）
  * 将函数与算法结合使用
@@ -127,3 +134,4 @@ void functionObjects() {
     // 输出处理的次数
     cout << "Function was called " << counter.getCount() << " times." << endl;
 }
+// #endregion functionObjects

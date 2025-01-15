@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// #region template1
 /**
  * 函数模板
  * 建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个虚拟的类型来代表。
@@ -24,6 +25,7 @@ void a() {
     cout << "Max int: " << intMax << endl;
     cout << "Max double: " << doubleMax << endl;
 }
+// #endregion template1
 
 template <typename T>
 void swapValues(T& a, T& b) {
@@ -44,6 +46,7 @@ void b() {
     cout << "After swap: p = " << p << ", q = " << q << endl;
 }
 
+// #region template2
 /**
  * 类型推导、显式指定模板类型参数
 */
@@ -83,7 +86,9 @@ void e(){
     cout << "Sum1: " << sum1 << endl;
     cout << "Sum2: " << sum2 << endl;
 }
+// #endregion template2
 
+// #region template3
 /**
  * 类模板
  * 类模板允许你定义一个可以操作不同数据类型的类
@@ -105,3 +110,4 @@ void f(){
     Box<double> doubleBox(3.14);  // 创建一个 Box<double> 对象
     cout << "Value in doubleBox: " << doubleBox.getValue() << endl;
 }
+// #endregion template3
