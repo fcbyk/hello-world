@@ -1,23 +1,24 @@
 import { DefaultTheme } from "vitepress";
 import index from "../docs/sidebar"
-import backend from "../docs/backend/sidebar"
-import friontend from "../docs/frontend/sidebar"
+import server from "../docs/server/sidebar"
+import web from "../docs/web/sidebar"
 import os from "../docs/os/sidebar"
+import build from "../docs/build/sidebar"
 
 export default {
     "/":index,
-    "/backend/":[
+    "/server/":[
         {
             text:"后端",
-            base:"/backend/",
-            items:backend
+            base:"/server/",
+            items:server
         }
     ],
-    "/frontend/":[
+    "/web/":[
         {
             text:"WEB前端",
-            base:"/frontend/",
-            items:friontend
+            base:"/web/",
+            items:web
         }
     ],
     "/os/":[
@@ -25,6 +26,13 @@ export default {
             text:"操作系统",
             base:"/os/",
             items:os
+        }
+    ],
+    "/build/":[
+        {
+            text:"构建工具",
+            base:"/build/",
+            items:build
         }
     ]
 } as DefaultTheme.Sidebar

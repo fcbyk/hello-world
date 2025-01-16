@@ -2,15 +2,15 @@ import { DefaultTheme } from "vitepress";
 
 export default [
     {
-        text:"coding",
+        text:"code",
         items:[
             {
-                text:"前端",
-                link:"/frontend/"
+                text:"web",
+                link:"/web/"
             },
             {
-                text:"后端",
-                link:"/backend/c"
+                text:"服务器",
+                link:"/server/"
             }
         ]
     },
@@ -34,5 +34,14 @@ export default [
                 link:"."
             },
         ]
-    }
+    },
+    {
+        text:"tools",
+        items:[
+            {
+                text:"构建",
+                link:"/build/"
+            }
+        ]
+    },
 ] as DefaultTheme.NavItem[]
