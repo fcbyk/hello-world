@@ -4,6 +4,7 @@ import server from "../docs/server/sidebar"
 import web from "../docs/web/sidebar"
 import os from "../docs/os/sidebar"
 import build from "../docs/build/sidebar"
+import data from "../docs/data/sidebar"
 
 export default {
     "/":index,
@@ -33,6 +34,13 @@ export default {
             text:"构建工具",
             base:"/build/",
             items:build
+        }
+    ],
+    "/data/":[
+        {
+            text:"数据",
+            base:"/data/",
+            items:data
         }
     ]
 } as DefaultTheme.Sidebar

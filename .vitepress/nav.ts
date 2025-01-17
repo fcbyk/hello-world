@@ -44,4 +44,8 @@ export default [
             }
         ]
     },
+    {
+        text:"data",
+        link:"/data/"
+    },
 ] as DefaultTheme.NavItem[]
