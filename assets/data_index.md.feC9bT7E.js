@@ -1,0 +1,1 @@
+import{a1 as a,c as e,o as t}from"./chunks/framework.BOM1ST4q.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"data/index.md","filePath":"data/index.md"}'),s={name:"data/index.md"},i=Object.assign(s,{setup(r){return a().go("/data/mysql"),(d,n)=>(t(),e("div"))}});export{c as __pageData,i as default};
