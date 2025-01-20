@@ -1,5 +1,5 @@
 <script setup>
-import history from './../../.vitepress/data/cpp'
+import history from './../.vitepress/data/cpp'
 </script>
 # C++
 ## 发展历史

@@ -2,7 +2,6 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "package.json": "pnpm-lock.yaml*",
-    ".gitignore": ".gitattributes",
     "config.mts":"nav.ts,sidebar.ts",
   },
   "[markdown]": {

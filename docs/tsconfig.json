@@ -13,5 +13,5 @@
     }
   },
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", ".vitepress/**/*"],
-  "exclude": ["node_modules", "code", "data"]
+  "exclude": ["node_modules"]
 }

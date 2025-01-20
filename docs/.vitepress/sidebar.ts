@@ -1,10 +1,10 @@
 import { DefaultTheme } from "vitepress";
-import index from "../docs/sidebar"
-import server from "../docs/server/sidebar"
-import web from "../docs/web/sidebar"
-import os from "../docs/os/sidebar"
-import build from "../docs/build/sidebar"
-import data from "../docs/data/sidebar"
+import index from "../sidebar"
+import server from "../server/sidebar"
+import web from "../web/sidebar"
+import os from "../os/sidebar"
+import build from "../build/sidebar"
+import data from "../data/sidebar"
 
 export default {
     "/":index,

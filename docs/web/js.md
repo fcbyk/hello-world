@@ -1,5 +1,5 @@
 <script setup>
-import history from './../../.vitepress/data/js'
+import history from './../.vitepress/data/js'
 </script>
 
 # JavaScript

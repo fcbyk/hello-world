@@ -1,5 +1,5 @@
 <script setup>
-import history from './../../.vitepress/data/c'
+import history from './../.vitepress/data/c'
 </script>
 
 # C语言

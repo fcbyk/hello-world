@@ -6,7 +6,6 @@ export default defineConfig({
   title: "HELLO",
   description: "This is where the story begins",
   head: [['link', { rel: 'icon', type:"image/svg+xml",href: '/favicon.svg' }]],
-  srcDir:"docs",
   cleanUrls:true,
   themeConfig: {
     logo: '/favicon.svg',
