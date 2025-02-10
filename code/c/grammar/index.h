@@ -12,4 +12,6 @@ int var(int test);
 
 int type(int test);
 
+int structType(int test);
+
 #endif

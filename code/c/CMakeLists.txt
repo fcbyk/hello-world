@@ -11,4 +11,5 @@ add_executable(c
         utils/index.h
         utils/test.c
         grammar/type.c
+        grammar/struct.c
 )
