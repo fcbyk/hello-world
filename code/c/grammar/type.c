@@ -1,136 +1,115 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <string.h>
+#include "index.h"
 
-/**
- * 基本数据类型
- * 整数类型（用于表示整数值）
- * 浮点类型（用于表示带小数的数值）
- * 字符类型（用于表示单个字符）
- * 布尔类型（用于表示真/假）
- */
+int type(int test){
 
-void a(){
-    // #region int
-    short a = 100;
-    int b = 200;
-    long c = 300L;
+    int init = test;
 
-    signed int d = 400;
-    unsigned int e = 500;
-    // #endregion int
-}
+     /**
+      * 基本数据类型
+      * 整数类型（用于表示整数值）
+      * 浮点类型（用于表示带小数的数值）
+      * 字符类型（用于表示单个字符）
+      * 布尔类型（用于表示真/假） C99 引入的布尔类型
+      */
+     {
+         {
+             short a = 100;
+             int b = 200;
+             long c = 300L;
 
-void b(){
-    // #region char
-    char a = 's';
-    // #endregion char
-}
+             signed int d = 400;
+             unsigned int e = 500;
 
-void c(){
-    // #region float
-    float a = 4.5;
-    double b = 200.11;
-    long double c = 500.33;
-    // #endregion float
-}
+             test += (a+b+c+d+e == 1500);
+         }
 
-void d(){
-    // #region bool
-    // C99 引入的布尔类型
-    bool a = true;
-    if (a) a = false;
-    // #endregion bool
-}
+         {
+             char a = 's';
 
-/**
- * 派生数据类型
- * 派生数据类型是通过基本数据类型派生出来的数据类型
- * 主要包括指针、数组、结构体、共用体和枚举。
- */
-void e(){
-    // #region arr
-    int a[5] = {1, 2, 3, 4, 5};
-    char b[6] = "Hello";
-    int c[2][3] = {9,8,7,6,5,4};
-    a[2] = 5;
-    // #endregion arr
-}
+             test += (a+1 == 116);
+         }
 
-struct student
-{
-    int num;
-    char name[10];
-    int computer,english,math;
-    double average;
-};
+         {
+             float a = 4.5f;
+             double b = 200.11;
+             long double c = 500.33;
+             long double sum = a + b + c;
 
-void f(){
-    // #region p
-    int num = 10;
+             test += (fabsl(sum - 704.94) < 1e-6);
+         }
 
-    // &为地址运算符，把num变量的地址赋值给指针变量ptr
-    int *ptr = &num;
+         {
+             bool a = true;
+             bool b = false;
 
-    // *号除了用于定义指针变量外，还被用于访问指针所指向的变量，也称为间接访问运算符
-    int a = *ptr;
+             test += (a+b);
+         }
+     }
 
-    struct student stu = {101,"zhang",78,87,85};
-    typedef struct student student;
-    student *pa;
-    pa=&stu;
 
-    // ->为指向运算符，访问指针指向的结构成员或共用体成员
-    // 下面三条语句，效果一样
-    stu.num =200;
-    (*pa).num = 200;
-    pa->num = 200;
-    // #endregion p
-}
-
-void g(){
-    // #region struct
-    struct student
+    /**
+     * 派生数据类型
+     * 派生数据类型是通过基本数据类型派生出来的数据类型
+     * 主要包括指针、数组、结构体、共用体和枚举。
+     */
     {
-        int num;
-        char name[10];
-        int computer,english,math;
-        double average;
-    };
+        {
+            int a[5] = {1, 2, 3, 4, 5};
+            char b[6] = "hello";
+            int c[2][3] = {9,8,7,6,5,4};
+            test += (a[2]+b[0]+c[1][2] == 111);
+        }
 
-    struct{
-        int num;
-        char name[20];
-    } anonymity;
+        {
+            struct student{
+                int num;
+                char name[10];
+                int computer,english,math;
+                double average;
+            };
 
-    struct student stu = {101,"不乐",78,87,85};
-    stu.num=100;
-    anonymity.num = 10;
-    strcpy(anonymity.name, "匿名结构体");
-    // #endregion struct
-}
+            struct student stu = {101,"zhang",78,87,85};
 
-void h(){
-    // #region union
-    union Data {
-        int i;
-        float f;
-        char str[20];
-    };
-    // #endregion union
-}
+            test += (stu.num + stu.computer == 179);
+        }
 
-void i(){
-    // #region enum
-    enum Weekday {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
-    enum Weekday today = Monday;  // 设置枚举变量
-    // #endregion enum
-}
 
-// #region typedef
-// 用户自定义数据类型、空类型
-void demo(){
-    typedef unsigned long ulong;
-    ulong num = 100000L;
-}
-// #endregion typedef
+        {
+            int num = 10;
+            int *ptr = &num;
+            int a = *ptr;
+            test += (a==10);
+        }
+
+        {
+            union {
+                int i;
+                float f;
+                char str[20];
+            } nui;
+
+            nui.f = 10.1f;
+            nui.i = 10;
+
+            test += ((float)nui.i+nui.f != 20.1f);
+        }
+
+        {
+            enum Weekday {Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday};
+            enum Weekday today = Monday;
+            test += (today + 1 == 2);
+        }
+
+    }
+
+    /**
+     * 用户自定义数据类型、空类型
+     */
+    {
+        typedef unsigned long u_long;
+        u_long num = 100000L;
+        test += (num-10 == 99990);
+    }
+
+    return test == (init + 10);
+ }

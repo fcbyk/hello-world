@@ -8,4 +8,7 @@ add_executable(c
         grammar/index.h
         grammar/var.c
         grammar/index.c
+        utils/index.h
+        utils/test.c
+        grammar/type.c
 )
